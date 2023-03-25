@@ -1,0 +1,15 @@
+global-exclude *
+include LICENSE
+include MANIFEST.in
+include pyproject.toml
+include README.md
+include README.rst
+include setup.cfg
+include setup.py
+include VERSION
+recursive-include reaction *.py
+recursive-include reaction/migrations *
+recursive-include reaction/static *
+recursive-include reaction/templates *
+recursive-include reaction/templatetags *
+global-exclude *.pyc

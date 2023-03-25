@@ -1,0 +1,13 @@
+{% load reaction_tags %}
+
+{% for react, count in reacts.items %}
+    <button type="button" {% if request.user.is_authenticated %} onclick="React('{{ reaction.urlhash }}', '{{ react.slug }}')" {% endif %}
+            class="group h-12 rounded-full border-solid border-2 py-2 px-2 {% if react == user_react %}border-react-selected-border-light bg-react-selected-bg-light dark:border-react-selected-border-dark dark:bg-react-selected-bg-dark{% else %}border-react-default-border-light bg-react-default-bg-light dark:border-react-default-border-dark dark:bg-react-default-bg-dark{% endif %}">
+        {% if settings.reaction_type == 'source' and react.source %}
+            <img src="{{ react.source.url }}" alt="{{ react.emoji }}" class="w-6 h-6 inline transition-transform duration-200 origin-bottom group-hover:scale-150">
+        {% else %}
+            <span class="w-6 h-6 inline text-base">{{ react.emoji }}</span>
+        {% endif %}
+        {% if count %} <span class="ltr:pr-1 rtl:pl-1 text-react-count-text-light dark:text-react-count-text-dark">{{ count|number:0 }}</span>{% endif %}
+    </button>
+{% endfor %}

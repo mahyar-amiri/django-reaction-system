@@ -1,0 +1,8 @@
+from django.conf import settings
+
+_REACTION_SETTINGS = getattr(settings, 'REACTION_SETTINGS', {})
+
+REACTION_SETTINGS = {
+    'URLHASH_LENGTH': _REACTION_SETTINGS.get('URLHASH_LENGTH', 8),
+    'OFFLINE_IMPORTS': _REACTION_SETTINGS.get('OFFLINE_IMPORTS', True),
+}
