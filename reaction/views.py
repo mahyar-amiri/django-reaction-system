@@ -18,7 +18,7 @@ class ReactionView(View, LoginRequiredMixin):
             'user_react': user_react,
             'reacts': reacts
         }
-        return render(request, 'reaction/reaction.html', context=context)
+        return render(request, 'reaction/reaction/reaction.html', context=context)
 
     def post(self, request, *args, **kwargs):
         user = request.user

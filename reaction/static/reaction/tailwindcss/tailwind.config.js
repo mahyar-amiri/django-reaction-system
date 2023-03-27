@@ -2,7 +2,7 @@
 tailwind.config = {
     darkMode: ['class', '[data-mode="dark"]'],
     content: [
-        '../../templates/**/*.html',
+        '../../../templates/**/*.html',
     ],
     theme: {
         extend: {

@@ -7,7 +7,7 @@ from reaction.models import Reaction, ReactionSettings
 register = template.Library()
 
 
-@register.inclusion_tag('reaction/reaction_form.html')
+@register.inclusion_tag('reaction/reaction/reaction_form.html')
 def render_reaction(request, obj, settings_slug):
     app_name = type(obj)._meta.app_label
     model_name = type(obj).__name__.lower()
@@ -41,11 +41,11 @@ def number(value, floating_points=None):
         return f'{value:,}'
 
 
-@register.inclusion_tag('utils/IMPORTS.html')
+@register.inclusion_tag('reaction/utils/IMPORTS.html')
 def render_reaction_import():
     return {'offline_imports': settings.OFFLINE_IMPORTS}
 
 
-@register.inclusion_tag('utils/SCRIPTS.html')
+@register.inclusion_tag('reaction/utils/SCRIPTS.html')
 def render_reaction_script():
     pass
