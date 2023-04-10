@@ -1,3 +1,5 @@
+import json
+
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse
 from django.shortcuts import render
@@ -22,8 +24,9 @@ class ReactionView(View, LoginRequiredMixin):
 
     def post(self, request, *args, **kwargs):
         user = request.user
-        reaction_urlhash = request.POST.get('urlhash', None)
-        react_slug = request.POST.get('react_slug', None)
+        data = json.loads(request.body)
+        reaction_urlhash = data.get('urlhash', None)
+        react_slug = data.get('react_slug', None)
 
         reaction = UserReaction.objects.filter(user=user, reaction__urlhash=reaction_urlhash).first()
 
