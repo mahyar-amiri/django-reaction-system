@@ -71,27 +71,6 @@ function React(urlhash, react_slug) {
         }
     }
     http.send(JSON.stringify(data));
-    // $.ajax({
-    //     type: method,
-    //     url: action,
-    //     data: {
-    //         urlhash,
-    //         react_slug
-    //     },
-    //     headers: {
-    //         'X-Requested-With': 'XMLHttpRequest',
-    //         'X-CSRFToken': getCookie('csrftoken'),
-    //     },
-    //     success: function () {
-    //         load(
-    //             document.querySelector(`#form-reaction-${urlhash}`),
-    //             `/reaction/react?urlhash=${urlhash}`
-    //         );
-    //     },
-    //     error: function () {
-    //         alert('ERROR in Submitting Reaction!')
-    //     }
-    // });
 }
 
 document.addEventListener("DOMContentLoaded", () => {

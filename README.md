@@ -209,8 +209,8 @@ templates
 ```text
 static
    ├── css
-   │    ├── style.css
-   │    └── style.min.css
+   │    ├── reaction.css
+   │    └── reaction.min.css
    ├── js
    │    ├── reaction.js
    │    ├── reaction.min.js
